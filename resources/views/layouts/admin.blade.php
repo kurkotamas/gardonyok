@@ -20,11 +20,12 @@
 <body>
 
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Gardonyok</a>
-    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
-    <ul class="navbar-nav px-3">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0 p-3" href="/">Gardonyok</a>
+    <input class="form-control form-control-dark w-100 " type="text" placeholder="Search" aria-label="Search">
+    <ul class="navbar-nav px-4">
         <li class="nav-item text-nowrap">
-            <a class="nav-link" href="#">Sign out</a>
+            <div class="d-inline text-light p-2 rounded font-weight-light h5">{{\Illuminate\Support\Facades\Auth::user()->name}}</div>
+            <a class="nav-link d-inline" href="#">Sign out</a>
         </li>
     </ul>
 </nav>
@@ -53,7 +54,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{route('admin.contacts')}}">
                             <span data-feather="users"></span>
                             Kapcsolatok
                         </a>

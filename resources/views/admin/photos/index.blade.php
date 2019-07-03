@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('title')
-    <h1 class="h2">Galéria</h1>
+    <h1 class="h1">Galéria</h1>
     <button type="button" class="btn btn-primary active" data-toggle="modal" data-target="#exampleModal">
         Hozzáad
     </button>

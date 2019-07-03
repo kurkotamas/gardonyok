@@ -11,20 +11,31 @@
 |
 */
 
+use App\Photo;
+
 Route::get('/', function () {
-    return view('welcome');
+    $photos = Photo::all();
+    return view('welcome', compact('photos'));
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
 
-//Route::get('/admin', function(){
-//    return view('admin.index');
-//});
 
-Route::resource('/admin/photos', 'AdminPhotosController');
+Route::group(['middleware'=>'admin'], function(){
 
-Route::get('/admin', function(){
-    return view('admin.index');
-})->middleware('admin');
+    Route::get('/admin', function(){
+        return view('admin.index');
+    });
+
+    Route::get('/admin/contacts', function(){
+        return view('admin/contacts/index');
+    })->name('admin.contacts');
+
+
+    Route::resources([
+        '/admin/photos' => 'AdminPhotosController',
+//        '/admin/contacts' => 'AdminContactsController'
+    ]);
+
+});
