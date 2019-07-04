@@ -13,10 +13,13 @@
 
 
 use gardony\Photo;
+use gardony\About;
 
 Route::get('/', function () {
     $photos = Photo::all();
-    return view('welcome', compact('photos'));
+    $about = About::all();
+    $about->toArray();
+    return view('welcome', compact('photos', 'about'));
 });
 
 Auth::routes();
@@ -36,6 +39,7 @@ Route::group(['middleware'=>'admin'], function(){
 
     Route::resources([
         '/admin/photos' => 'AdminPhotosController',
+        '/admin/about' => 'AdminAboutController',
 //        '/admin/contacts' => 'AdminContactsController'
     ]);
 

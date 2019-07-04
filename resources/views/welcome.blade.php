@@ -18,3 +18,10 @@
         @endforeach
     @endif
 @stop
+
+@section('about_head_text_top')
+    {{$about{0}->text_top}}
+@stop
+@section('about_head_text_bottom')
+    {{$about{0}->text_bottom}}
+@stop

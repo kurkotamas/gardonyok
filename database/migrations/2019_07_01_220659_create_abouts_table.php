@@ -15,6 +15,8 @@ class CreateAboutsTable extends Migration
     {
         Schema::create('abouts', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('text_top')->nullable();
+            $table->string('text_bottom')->nullable();
             $table->timestamps();
         });
     }

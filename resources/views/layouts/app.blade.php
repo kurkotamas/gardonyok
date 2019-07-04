@@ -147,7 +147,7 @@
             <div class="col text-center py-5">
                 <h1 class="display-4">Rólunk</h1>
                 <p class="lead">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et fugiat enim provident tempora. Dicta praesentium totam sunt commodi atque expedita.
+                    @yield('about_head_text_top')
                 </p>
                 <a href="" class="btn btn-outline-light">Find Out MOre</a>
             </div>
@@ -164,7 +164,7 @@
             </div>
             <div class="col-md-6 order-1">
                 <h3>Create Your Passion</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, assumenda. Fugit quam expedita, repellat provident velit cum! Id, sit amet! </p>
+                <p>@yield('about_head_text_bottom')</p>
                 <div class="d-flex">
                     <div class="p-4 align-self-start">
                         <i class="fas fa-check fa-2x"></i>
