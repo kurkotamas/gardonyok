@@ -61,3 +61,7 @@ body {
     background: #F4E7D3;
     color: #1F4E5F;
 }
+
+#about-section  img {
+    margin-top: -50px;
+}
