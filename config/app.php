@@ -170,11 +170,11 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        gardony\Providers\AppServiceProvider::class,
+        gardony\Providers\AuthServiceProvider::class,
+        // gardony\Providers\BroadcastServiceProvider::class,
+        gardony\Providers\EventServiceProvider::class,
+        gardony\Providers\RouteServiceProvider::class,
 
     ],
 

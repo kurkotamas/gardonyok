@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace gardony;
 
 use Illuminate\Database\Eloquent\Model;
 

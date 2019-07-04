@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Middleware;
+namespace gardony\Http\Middleware;
 
 use Closure;
 use Illuminate\Support\Facades\Auth;
@@ -23,6 +23,6 @@ class IsAdmin
         }
 
 
-        return redirect('home');
+        return redirect('login');
     }
 }

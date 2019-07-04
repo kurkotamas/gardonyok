@@ -11,7 +11,8 @@
 |
 */
 
-use App\Photo;
+
+use gardony\Photo;
 
 Route::get('/', function () {
     $photos = Photo::all();

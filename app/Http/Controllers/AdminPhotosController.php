@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace gardony\Http\Controllers;
 
-use App\Http\Requests\PhotoCreateRequest;
-use App\Photo;
+use gardony\Http\Requests\PhotoCreateRequest;
+use gardony\Photo;
 use Illuminate\Http\Request;
 
 class AdminPhotosController extends Controller
