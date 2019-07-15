@@ -8,49 +8,6 @@
 @stop
 
 @section('content')
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Kép hozzáadása</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    {{ Form::open(['method'=>'POST', 'action'=>'AdminPhotosController@store', 'files'=>true]) }}
-
-                        <div class="form-group">
-
-                            <div >
-                                {{ Form::label('title', 'Cím:', ['class'=>'h6']) }}
-                                {{ Form::text('title', null, ['class'=>'form-control']) }}
-                            </div>
-
-
-                            <div class="mt-3">
-                                {{ Form::file('image', null, ['class'=>'form-control']) }}
-                            </div>
-
-                            <div class="mt-3">
-                                {{ Form::label('description', 'Leírás:', ['class'=>'h6']) }}
-                                {{ Form::textarea('description', null, ['class'=>'form-control']) }}
-                            </div>
-                        </div>
-                    @include('includes.form_error')
-
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Mégse</button>
-                    {{ Form::submit('Feltöltés', ['class'=>'btn btn-primary']) }}
-
-                    {!! Form::close() !!}
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--End of  Modal -->
 
     <!-- Table -->
     @if($photos->isNotEmpty())
@@ -93,5 +50,49 @@
 
     @endif
     <!-- End of Table -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Kép hozzáadása</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    {{ Form::open(['method'=>'POST', 'action'=>'AdminPhotosController@store', 'files'=>true]) }}
+
+                    <div class="form-group">
+
+                        <div >
+                            {{ Form::label('title', 'Cím:', ['class'=>'h6']) }}
+                            {{ Form::text('title', null, ['class'=>'form-control']) }}
+                        </div>
+
+
+                        <div class="mt-3">
+                            {{ Form::file('image', null, ['class'=>'form-control']) }}
+                        </div>
+
+                        <div class="mt-3">
+                            {{ Form::label('description', 'Leírás:', ['class'=>'h6']) }}
+                            {{ Form::textarea('description', null, ['class'=>'form-control']) }}
+                        </div>
+                    </div>
+                    @include('includes.form_error')
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Mégse</button>
+                    {{ Form::submit('Feltöltés', ['class'=>'btn btn-primary']) }}
+
+                    {!! Form::close() !!}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End of  Modal -->
 
 @stop

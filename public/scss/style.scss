@@ -1,0 +1,129 @@
+$color-primary-0: #6f1d1b;	// Main Primary color */
+$color-primary-1: #bb9457;
+$color-primary-2: #432818;
+$color-primary-3: #99582a;
+$color-primary-4: #ffe6a7;
+
+$rgba-primary-0: rgba(111, 29, 27, 1);
+$rgba-primary-1: rgba(187, 148, 87, 1);
+$rgba-primary-2: rgba(67, 40, 24, 1);
+$rgba-primary-3: rgba(153, 88, 42, 1);
+$rgba-primary-4: rgba(255, 230, 167, 1);
+
+$primary: $color-primary-0;
+$primary-overlay: rgba($rgba-primary-3, 0.3);
+
+$secondary: $color-primary-1;
+
+body {
+    background: $color-primary-1 !important;
+}
+
+.navbar {
+    border-bottom: $color-primary-3 3px solid;
+    opacity: 0.9;
+    a {
+        font-weight: bold;
+        color: $color-primary-1 !important;
+    }
+    #navBrand {
+        font-size: x-large;
+
+    }
+}
+
+
+#home-section {
+    background: url(../images/background7.jpg);
+    color: #000;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 700px;
+    .primary-overlay {
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        min-height: 700px;
+        background: $primary-overlay;
+    }
+    .home-inner {
+        padding-top: 64px;
+    }
+    .card-form {
+        opacity: 0.8;
+    }
+    .fas {
+        color: #008ed6;
+        background: #fff;
+        padding: 5px;
+        border-radius: 5px;
+    }
+}
+#create-section .fas {
+    color: #008ed6;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#gallery-section {
+    background: url(../images/background4.jpg);
+    color: #000;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 550px;
+    .fas {
+        background: #333;
+        color: #fff;
+        padding: 5px;
+        border-radius: 5px;
+    }
+}
+
+#share-section .fas {
+    background: #333;
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+#about-section .img-fluid{
+    width: 80%;
+}
+
+
+#about-section{
+    img {
+        margin-top: -50px;
+    }
+    .card:hover {
+        background: $secondary;
+        color: #fff;
+    }
+
+}
+
+#contacts-head-section {
+    background: url(../images/background9.jpg);
+    color: #fff;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 200px;
+}
+#contacts-section h3 {
+    font-size: 3rem !important;
+}
+
+#main-footer {
+    background: $color-primary-4;
+    color: $color-primary-3;
+    p {
+        margin-top: 10px;
+    }
+}
+
+@import "bootstrap";

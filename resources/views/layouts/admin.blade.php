@@ -20,7 +20,7 @@
 <body>
 
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand col-sm-3 col-md-2 mr-0 p-3" href="/">Gardonyok</a>
+    <a class="navbar-brand mr-0 p-3" href="/">Gardonyok</a>
     <ul class="navbar-nav px-4">
         <li class="nav-item d-flex text-nowrap">
             <div class="d-inline mr-3 text-light rounded font-weight-light h5">{{\Illuminate\Support\Facades\Auth::user()->name}}</div>
@@ -33,8 +33,7 @@
 </nav>
 
 <div class="container">
-    <div class="row">
-        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+        <nav class="bg-light sidebar">
             <div class="sidebar-sticky" >
                 <ul class="nav flex-column">
                     <li class="nav-item">
@@ -65,14 +64,14 @@
             </div>
         </nav>
 
-        <main role="main" class="col-lg-10 pt-2 px-2">
+        <main role="main" class=" pt-2 px-2">
             <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
                 @yield('title')
             </div>
             @yield('content')
 
         </main>
-    </div>
+
 </div>
 
 <!-- Bootstrap core JavaScript

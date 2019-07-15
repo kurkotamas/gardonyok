@@ -5,17 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="images/favicon.jpg" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
     <title>Gardony</title>
 </head>
 <body data-spy="scroll" data-target="#main-nav" id="home">
 <!-- NAVBAR -->
-<nav class="navbar navbar-expand-sm navbar-light fixed-top" id="main-nav">
+<nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top" id="main-nav">
     <div class="container">
-        <a href="index.html" class="navbar-brand">
-            <img src="images/logo.png" width="40" height="40" alt="">
+        <a id="navBrand" href="index.html" class="navbar-brand">
             Gardony</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
@@ -39,63 +38,52 @@
         </div>
     </div>
 </nav>
+
 <!-- HOME SECTION -->
 <header id="home-section">
-    <div class="dark-overlay">
+    <div class="primary-overlay">
         <div class="home-inner container">
             <div class="row">
+                <div class="col-lg-4 col-sm-6 offset-lg-8 p-2">
+                    <a class="p-2" href="http://facebook.com"><i class="fab fa-facebook fa-3x"></i></a>
+                    <a class="p-2" href="http://instagram.com"><i class="fab fa-instagram fa-3x"></i></a>
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-lg-8 d-none d-lg-block">
-                    <h1 class="display-4">Lorem <strong>ipsum</strong> dolor sit amet.
+                    <h1 class="display-4"> <strong>Üdvözöljük</strong> weboldalunkon!
                     </h1>
                     <div class="d-flex">
                         <div class="p-4 align-self-start">
                             <i class="fas fa-check fa-2x"></i>
                         </div>
-                        <div class="p-4 align-self-end">
+                        <h3 class="p-4 align-self-end">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, deserunt?
-                        </div>
+                        </h3>
                     </div>
 
                     <div class="d-flex">
                         <div class="p-4 align-self-start">
                             <i class="fas fa-check fa-2x"></i>
                         </div>
-                        <div class="p-4 align-self-end">
+                        <h3 class="p-4 align-self-end">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, deserunt?
-                        </div>
+                        </h3>
                     </div>
 
                     <div class="d-flex">
                         <div class="p-4 align-self-start">
                             <i class="fas fa-check fa-2x"></i>
                         </div>
-                        <div class="p-4 align-self-end">
+                        <h3 class="p-4 align-self-end">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat, deserunt?
-                        </div>
+                        </h3>
                     </div>
                 </div>
 
-                <div class="col-lg-4">
-                    <div class="card bg-dark txt-center card-form">
-                        <div class="card-body">
-                            <h3>Sign Up Today</h3>
-                            <p>Please fill out this form to register</p>
-                            <form action="">
-                                <div class="form-group">
-                                    <input type="username" class="form-control form-control-lg" placeholder="Username">
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control form-control-lg" placeholder="Email">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control form-control-lg" placeholder="Password">
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" class="form-control form-control-lg" placeholder="Confirm Password">
-                                </div>
-                                <input type="submit" value="Submit" class="btn btn-outline-light btn-block">
-                            </form>
-                        </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="card bg-dark">
+                            <img class="img-fluid" src="images/gallery-wide.jpg">
                     </div>
                 </div>
             </div>
@@ -104,7 +92,7 @@
 </header>
 
 <!-- GALLERY HEAD -->
-<section id="gallery-head-section">
+<section id="gallery-head-section" class="bg-light">
     <div class="container">
         <div class="row">
             <div class="col text-center py-5">
@@ -119,29 +107,16 @@
 </section>
 
 <!-- GALLERY SECTION  -->
-<section id="gallery-section" class="bg-light text-muted py-5">
+<section id="gallery-section" class="pt-4">
     <div class="container">
-        <div>
-            <div class="card text-white mb-3">
-                @yield('gallery_photo_wider')
-                <div class="card-img-overlay">
-                    <h4 class="card-title">Card title</h4>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content
-                        is a little bit longer.</p>
-                    <p>
-                        <small class="text-muted">Last updated 3 mins ago</small>
-                    </p>
-                </div>
-            </div>
-            <div class="card-columns">
-                @yield('gallery_photo')
-            </div>
+        <div class="">
+            @yield('gallery_photo')
         </div>
     </div>
 </section>
 
 <!-- ABOUT HEAD -->
-<section id="about-head-section" class="bg-primary">
+<section id="about-head-section" class="bg-primary text-white">
     <div class="container">
         <div class="row">
             <div class="col text-center py-5">
@@ -156,11 +131,11 @@
 </section>
 
 <!-- ABOUT SECTION  -->
-<section id="about-section" class="py-5">
+<section id="about-section" class="py-5 bg-light">
     <div class="container">
         <div class="row">
             <div class="col-md-4 order-2">
-                <div class="card">
+                <div class="card" id="creator">
                     <div class="card-body text-dark text-center">
                        <img src="images/person4.jpg" alt="" class="img-fluid rounded-circle">
                         <div class="card-title">
@@ -206,27 +181,28 @@
 </section>
 
 <!-- CONTACTS HEAD -->
-<section id="contacts-head-section" >
-    <div class="container">
-        <div class="row">
-            <div class="col text-center py-5">
-                <h1 class="display-4">Kapcsolatok</h1>
-                <p class="lead">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et fugiat enim provident tempora. Dicta praesentium totam sunt commodi atque expedita.
-                </p>
-                <a href="" class="btn btn-outline-light">Find Out MOre</a>
+<section id="contacts-head-section" class="bg-secondary py-3">
+    <div class="primary-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center py-5">
+                    <h1 class="display-4">Kapcsolatok</h1>
+                    <p class="lead">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et fugiat enim provident tempora. Dicta praesentium totam sunt commodi atque expedita.
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
 <!-- CONTACTS SECTION  -->
-<section id="contacts-section" class="bg-light text-muted py-5">
-    <div class="container">
+<section id="contacts-section" class="bg-light py-5">
+    <div class="container py-2">
         <div class="row">
             <div class="card col-md-6 order-2 border border-dark">
                 <div class="card-body">
-                    <h3 class="mb-4">Hagyjon üzenetet</h3>
+                    <h4 class="mb-4">Hagyjon üzenetet</h4>
                     <form action="">
                         <div class="form-group">
                             <input type="text" class="form-control" placeholder="Név">
@@ -237,28 +213,37 @@
                         <div class="form-group">
                             <textarea rows="5" class="form-control" placeholder="Üzenet"></textarea>
                         </div>
-                        <input type="submit" value="Küldés" class="btn btn-outline-dark">
+                        <input type="submit" value="Küldés" class="btn btn-danger btn-lg btn-block">
                     </form>
                 </div>
             </div>
             <div class="col-md-6 order-1">
-                <h3>Elérhetőségek</h3>
+                <h3 class="display-4">Elérhetőségek</h3>
+                <br>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, assumenda. Fugit quam expedita, repellat provident velit cum! Id, sit amet! </p>
                 <div class="d-flex">
-                    <div class="p-4 align-self-start">
-                        <i class="fas fa-check fa-2x"></i>
+                    <div class="p-1 align-self-start">
+                        <i class="fas fa-phone fa-1x"></i>
                     </div>
-                    <div class="p-4 align-self-end">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla porro aperiam, quibusdam at esse voluptate!
-                    </div>
+                    <h5 class="p-2 align-self-end">
+                        (+40)712 345 678
+                    </h5>
                 </div>
                 <div class="d-flex">
-                    <div class="p-4 align-self-start">
-                        <i class="fas fa-check fa-2x"></i>
+                    <div class="p-1 align-self-start">
+                        <i class="fas fa-envelope fa-1x"></i>
                     </div>
-                    <div class="p-4 align-self-end">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla porro aperiam, quibusdam at esse voluptate!
+                    <h5 class="p-2 align-self-end">
+                        emailaddress@example.com
+                    </h5>
+                </div>
+                <div class="d-flex">
+                    <div class="p-1 align-self-start">
+                        <i class="fas fa-location-arrow fa-1x"></i>
                     </div>
+                    <h5 class="p-2 align-self-end">
+                        New Castle, 2845 Lake Floyd Circle, DE
+                    </h5>
                 </div>
             </div>
         </div>
@@ -266,50 +251,14 @@
 </section>
 
 <!-- FOOTER -->
-<footer id="main-footer" class="bg-dark">
+<footer id="main-footer py-2">
     <div class="container">
-        <div class="row">
-            <div class="col text-center py-4">
-                <h3>Gardony</h3>
-                <p>Copyright &copy; <span id="year"></span></p>
-                <button class="btn btn-primary" data-toggle="modal" data-target="#contactModal">Contact Us</button>
-            </div>
+        <div class="row justify-content-center py-4">
+                <h3 class="mr-2">Gardony</h3>
+                <p class="">Copyright &copy; <span id="year"></span></p>
         </div>
     </div>
 </footer>
-
-<!-- CONTACT MODAL -->
-<div class="modal fade text-dark" id="contactModal">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Contact Us</h5>
-                <button class="close" data-dismiss="modal">
-                    <span>&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea class="form-control"></textarea>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary btn-block">Submit</button>
-            </div>
-        </div>
-    </div>
-</div>
 
 
 
@@ -317,6 +266,7 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js"></script>
 <script>
     //Get the current year for the copyright
     $('#year').text(new Date().getFullYear());
@@ -337,6 +287,13 @@
             });
         }
     });
+
+    // Lightbox Init
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+        event.preventDefault();
+        $(this).ekkoLightbox();
+    });
+
 
 
 </script>

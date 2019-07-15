@@ -16,10 +16,10 @@ use gardony\Photo;
 use gardony\About;
 
 Route::get('/', function () {
-    $photos = Photo::all();
+    $photos = DB::table('photos')->paginate(3);
     $about = About::all();
     $about->toArray();
-    return view('welcome', compact('photos', 'about'));
+    return view('welcome', ['photos'=>$photos, 'about'=>$about]);
 });
 
 Auth::routes();
