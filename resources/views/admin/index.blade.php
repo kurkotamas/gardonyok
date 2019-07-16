@@ -7,38 +7,49 @@
 
 @section('content')
 
-    <canvas class="my-4" id="myChart" width="900" height="380"></canvas>
-
-    <!-- Graphs -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
-    <script>
-        var ctx = document.getElementById("myChart");
-        var myChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-                datasets: [{
-                    data: [15339, 21345, 18483, 24003, 23489, 24092, 12034],
-                    lineTension: 0,
-                    backgroundColor: 'transparent',
-                    borderColor: '#007bff',
-                    borderWidth: 4,
-                    pointBackgroundColor: '#007bff'
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: false
-                        }
-                    }]
-                },
-                legend: {
-                    display: false,
-                }
-            }
-        });
-    </script>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="mt-3">
+                    <a href="{{route('messages.index')}}">
+                        <div class="card bg-warning text-white p-3 text-center">
+                            <div class="card-body">
+                                <i class="fas fa-envelope fa-3x"></i><h5 class="">Üzenetek</h5>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mt-3">
+                <a href="{{route('photos.index')}}">
+                    <div class="card bg-primary text-white p-3 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-images fa-3x"></i><h5 class="">Galéria</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mt-3">
+                <a href="{{route('about.index')}}">
+                    <div class="card bg-success text-white p-3 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-edit fa-3x"></i><h5 class="">Leírás</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 mt-3">
+                <a href="{{route('contacts.index')}}">
+                    <div class="card bg-danger text-white p-3 text-center">
+                        <div class="card-body">
+                            <i class="fas fa-id-card fa-3x"></i><h5 class="text-nowrap">Kapcsolatok</h5>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
 
 @stop

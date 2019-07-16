@@ -8,14 +8,14 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css">
-    <title>Gardony</title>
+    <title>{{config('app.name')}}</title>
 </head>
 <body data-spy="scroll" data-target="#main-nav" id="home">
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-sm navbar-dark bg-primary fixed-top" id="main-nav">
     <div class="container">
-        <a id="navBrand" href="index.html" class="navbar-brand">
-            Gardony</a>
+        <a id="navBrand" href="/" class="navbar-brand">
+            {{config('app.name')}}</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -137,7 +137,7 @@
             <div class="col-md-4 order-2">
                 <div class="card" id="creator">
                     <div class="card-body text-dark text-center">
-                       <img src="images/person4.jpg" alt="" class="img-fluid rounded-circle">
+                       <img src="images/person.jpg" alt="" class="img-fluid rounded-circle">
                         <div class="card-title">
                             <h3>Antal Attila</h3>
                         </div>
@@ -203,48 +203,26 @@
             <div class="card col-md-6 order-2 border border-dark">
                 <div class="card-body">
                     <h4 class="mb-4">Hagyjon üzenetet</h4>
-                    <form action="">
+                    {!! Form::model(['method'=>'POST', 'action'=>'GuestController@store'])!!}
+                        @csrf
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Név">
+                            <input type="text" name="name" class="form-control" placeholder="Név">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" placeholder="E-mail">
+                            <input type="text" name="email" class="form-control" placeholder="E-mail">
                         </div>
                         <div class="form-group">
-                            <textarea rows="5" class="form-control" placeholder="Üzenet"></textarea>
+                            <textarea rows="5" name="message" class="form-control" placeholder="Üzenet"></textarea>
                         </div>
-                        <input type="submit" value="Küldés" class="btn btn-danger btn-lg btn-block">
-                    </form>
+                        <input type="submit" value="Elküldöm" class="btn btn-danger btn-lg btn-block">
+                    {!! Form::close() !!}
                 </div>
             </div>
             <div class="col-md-6 order-1">
                 <h3 class="display-4">Elérhetőségek</h3>
                 <br>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, assumenda. Fugit quam expedita, repellat provident velit cum! Id, sit amet! </p>
-                <div class="d-flex">
-                    <div class="p-1 align-self-start">
-                        <i class="fas fa-phone fa-1x"></i>
-                    </div>
-                    <h5 class="p-2 align-self-end">
-                        (+40)712 345 678
-                    </h5>
-                </div>
-                <div class="d-flex">
-                    <div class="p-1 align-self-start">
-                        <i class="fas fa-envelope fa-1x"></i>
-                    </div>
-                    <h5 class="p-2 align-self-end">
-                        emailaddress@example.com
-                    </h5>
-                </div>
-                <div class="d-flex">
-                    <div class="p-1 align-self-start">
-                        <i class="fas fa-location-arrow fa-1x"></i>
-                    </div>
-                    <h5 class="p-2 align-self-end">
-                        New Castle, 2845 Lake Floyd Circle, DE
-                    </h5>
-                </div>
+                @yield('contacts')
             </div>
         </div>
     </div>
@@ -254,7 +232,7 @@
 <footer id="main-footer py-2">
     <div class="container">
         <div class="row justify-content-center py-4">
-                <h3 class="mr-2">Gardony</h3>
+                <h3 class="mr-2">{{config('app.name')}}</h3>
                 <p class="">Copyright &copy; <span id="year"></span></p>
         </div>
     </div>

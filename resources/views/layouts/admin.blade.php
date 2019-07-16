@@ -6,73 +6,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-    <title>Gardonyok</title>
+    <title>{{config('app.name')}}</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- Custom styles -->
     <link href="/css/dashboard.css" rel="stylesheet">
+
+    {{--Font Awesome Icons--}}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
+
 </head>
 
 <body>
-
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
-    <a class="navbar-brand mr-0 p-3" href="/">Gardonyok</a>
+    <a class="navbar-brand mr-0 p-3" href="/">{{config('app.name')}}</a>
+    <div class="navbar navbar-expand-md">
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+
     <ul class="navbar-nav px-4">
         <li class="nav-item d-flex text-nowrap">
             <div class="d-inline mr-3 text-light rounded font-weight-light h5">{{\Illuminate\Support\Facades\Auth::user()->name}}</div>
             <form class="" action="{{ route('logout') }}" method="POST">
                 @csrf
-                    <input class="d-inline btn btn-primary btn-sm " type="submit" value="Kijelentkezés">
+                <input class="d-inline btn btn-primary btn-sm " type="submit" value="Kijelentkezés">
             </form>
         </li>
     </ul>
 </nav>
 
 <div class="container">
-        <nav class="bg-light sidebar">
-            <div class="sidebar-sticky" >
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="/admin">
-                            <span data-feather="home"></span>
-                            Áttekintés <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('photos.index')}}">
-                            <span data-feather="image"></span>
-                            Galéria
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('about.index')}}">
-                            <span data-feather="edit-2"></span>
-                            Leírás
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{route('admin.contacts')}}">
-                            <span data-feather="users"></span>
-                            Kapcsolatok
-                        </a>
-                    </li>
-                </ul>
+    <div class="row">
+        <div class="col-md-2">
+            <nav class="bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <nav class="navbar navbar-expand-md flex-column">
+                        <div class="container">
+                            <div class="collapse navbar-collapse" id="navbarCollapse">
+                                <ul class="list-unstyled">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="/admin">
+                                            <span data-feather="home"></span>
+                                            Áttekintés <span class="sr-only">(current)</span>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{route('messages.index')}}">
+                                            <span class="mr-1"><i class="far fa-envelope text-muted"></i></span>
+                                            Üzenetek
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{route('photos.index')}}">
+                                            <span data-feather="image"></span>
+                                            Galéria
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{route('about.index')}}">
+                                            <span data-feather="edit-2"></span>
+                                            Leírás
+                                        </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{route('contacts.index')}}">
+                                            <span data-feather="users"></span>
+                                            Kapcsolatok
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </nav>
+        </div>
+        <div class="col-md-10">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="border-bottom py-3">
+                            @yield('title')
+                        </div>
+                        <div class="mt-3">
+                            @yield('content')
+                        </div>
+                    </div>
+
+                </div>
             </div>
-        </nav>
-
-        <main role="main" class=" pt-2 px-2">
-            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                @yield('title')
-            </div>
-            @yield('content')
-
-        </main>
-
+        </div>
+    </div>
 </div>
+
 
 <!-- Bootstrap core JavaScript
 ================================================== -->

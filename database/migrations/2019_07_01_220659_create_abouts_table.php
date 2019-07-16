@@ -17,6 +17,7 @@ class CreateAboutsTable extends Migration
             $table->bigIncrements('id');
             $table->string('text_top')->nullable();
             $table->string('text_bottom')->nullable();
+            $table->integer('views')->default(0);
             $table->timestamps();
         });
     }

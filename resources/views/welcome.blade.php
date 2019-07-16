@@ -25,8 +25,43 @@
 @stop
 
 @section('about_head_text_top')
-    {{$about{0}->text_top}}
+    {{$about->text_top}}
 @stop
 @section('about_head_text_bottom')
-    {{$about{0}->text_bottom}}
+    {{$about->text_bottom}}
+@stop
+
+@section('contacts')
+    <div class="d-flex">
+        <div class="p-1 align-self-center">
+            <i class="fas fa-user fa-1x"></i>
+        </div>
+        <h5 class="p-2 align-self-end">
+            {{$contact->name}}
+        </h5>
+    </div>
+    <div class="d-flex">
+        <div class="p-1 align-self-center">
+            <i class="fas fa-phone fa-1x"></i>
+        </div>
+        <h5 class="p-2 align-self-end">
+            {{$contact->phone}}
+        </h5>
+    </div>
+    <div class="d-flex">
+        <div class="p-1 align-self-center">
+            <i class="fas fa-envelope fa-1x"></i>
+        </div>
+        <h5 class="p-2 align-self-end">
+            {{$contact->email}}
+        </h5>
+    </div>
+    <div class="d-flex">
+        <div class="p-1 align-self-center">
+            <i class="fas fa-location-arrow fa-1x"></i>
+        </div>
+        <h5 class="p-2 align-self-end">
+            {{$contact->location}}
+        </h5>
+    </div>
 @stop

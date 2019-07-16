@@ -5,6 +5,7 @@ namespace gardony\Http\Controllers;
 use gardony\Http\Requests\PhotoCreateRequest;
 use gardony\Photo;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 
 class AdminPhotosController extends Controller
 {
